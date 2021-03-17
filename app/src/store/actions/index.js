@@ -8,24 +8,24 @@ export const fetchData = () => {
         dispatch({ type: FETCH_CARDS_START });
 
 
-        import axios from "axios";
+
 
         const options = {
             method: 'GET',
-            url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards',
+            url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/basic',
             headers: {
                 'x-rapidapi-key': '459a9b1ebemsh065f357eeb6b253p18a538jsnd497d7ccee7d',
                 'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com'
             }
         };
 
-        axios.request(options).then(function (response) {
+        axios.request(options).then(function (res) {
 
-            console.log(response.data);
-            dispatch({ type: FETCH_SPELLS_SUCCESS, payload: res.data });
-        }).catch(function (error) {
-            console.error(error);
-            dispatch({ type: FETCH_SPELLS_FAILURE, payload: err.message });
+            console.log(res.data);
+            dispatch({ type: FETCH_CARDS_SUCCESS, payload: res.data });
+        }).catch(function (err) {
+            console.error(err);
+            dispatch({ type: FETCH_CARDS_FAILURE, payload: err.message });
         });
     }
 }
