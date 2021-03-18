@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import './normalize.css'
+import './skeleton.css'
 import { connect } from "react-redux"
 import { fetchData } from "./store"
 import { useEffect } from 'react';
@@ -24,9 +26,10 @@ const App = (props) => {
         width={100}
         timeout={3000} //3 secs
       /> :
-        <div><h1>Basic Card Set</h1>
-          <CardList cards={props.cards} /></div>
+        <div className={"container"} id={"display"}><div id={"bgImg"}></div><h1>Hearthstone: <br></br> Basic Card Set</h1>
+          <CardList cards={props.cards} /><p>Made by: Jonathan Calderon</p></div>
       }
+
     </div>
   );
 }

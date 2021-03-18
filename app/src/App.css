@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+    background: transparent;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: 'HearthFont';
+    src: url('./LHFUncialCaps.ttf');
+    /* IE9 Compat Modes */
+}
+
+#bgImg {
+    background-image: url("./files/kisspng-hearthstone-texture-mapping-3d-computer-graphics-a-chocolate-background-5aac189f8939b8.5808127115212279355621.png");
+    background-repeat: repeat;
+    background-size: 300px;
+    filter: blur(0.5px);
+    z-index: -1;
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+body {
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-cursor.png) 10 2, auto;
+    background: transparent;
+}
+
+body:active {
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-click.png) 10 2, auto;
+}
+
+.App {
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#display {
+    font-family: 'HearthFont';
+    padding-top: 5%;
+    background: transparent;
+    color: rgb(255, 240, 220);
+}
+
+.cardImg {
+    max-width: 150px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 2px solid #555555;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
